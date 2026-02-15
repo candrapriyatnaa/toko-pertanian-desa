@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agri Desa -SOMOKETRO</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+body{background:#f7faf7;color:#333;scroll-behavior:smooth;}
+
+header{
+background:linear-gradient(135deg,#1b5e20,#43a047);
+color:white;
+padding:80px 20px;
+text-align:center;
+}
+
+header h1{font-size:42px;font-weight:700;}
+header p{margin-top:15px;font-size:18px;}
+
+.cta-btn{
+margin-top:25px;
+display:inline-block;
+background:white;
+color:#2e7d32;
+padding:12px 25px;
+border-radius:30px;
+font-weight:600;
+text-decoration:none;
+transition:0.3s;
+}
+.cta-btn:hover{background:#e8f5e9;}
+
+nav{
+position:sticky;
+top:0;
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+padding:15px;
+text-align:center;
+z-index:1000;
+}
+nav a{
+margin:0 20px;
+text-decoration:none;
+color:#2e7d32;
+font-weight:600;
+}
+
+.stats{
+display:flex;
+justify-content:center;
+gap:50px;
+padding:50px 20px;
+background:white;
+}
+.stat-box{text-align:center;}
+.stat-box h2{color:#2e7d32;font-size:32px;}
+
+section{padding:60px 8%;}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
+transition:0.3s;
+}
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 35px rgba(0,0,0,0.12);
+}
+
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+
+.card-content{padding:15px;}
+
+.price{color:#2e7d32;font-weight:600;margin:10px 0;}
+
+button{
+background:#2e7d32;
+color:white;
+border:none;
+padding:8px 15px;
+border-radius:8px;
+cursor:pointer;
+}
+
+button:hover{background:#1b5e20;}
+
+.cart{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+input{
+width:100%;
+padding:10px;
+margin:8px 0;
+border-radius:8px;
+border:1px solid #ddd;
+}
+
+footer{
+background:#1b5e20;
+color:white;
+text-align:center;
+padding:30px;
+margin-top:50px;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50%;
+text-decoration:none;
+font-size:20px;
+box-shadow:0 5px 20px rgba(0,0,0,0.2);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>AgriDesa Somoketro🌾</h1>
+<p>Platform Digital Hasil Pertanian Langsung dari Petani Lokal</p>
+<a href="#produk" class="cta-btn">Belanja Sekarang</a>
+</header>
+
+<nav>
+<a href="#produk">Produk</a>
+<a href="#keranjang">Keranjang</a>
+</nav>
+
+<div class="stats">
+<div class="stat-box">
+<h2>150+</h2>
+<p>Petani Mitra</p>
+</div>
+<div class="stat-box">
+<h2>500+</h2>
+<p>Produk Segar</p>
+</div>
+<div class="stat-box">
+<h2>1000+</h2>
+<p>Pelanggan</p>
+</div>
+</div>
+
+<!-- MAKANAN POKOK -->
+<section id="makanan">
+<h2>🟢 Makanan Pokok</h2>
+<div class="products">
+
+<div class="card">
+<img src="beras.jpg">
+<h3>Beras</h3>
+<p>Rp 15000 / kg</p>
+<button onclick="addToCart('Beras',15000)">Tambah</button>
+</div>
+
+<div class="card">
+<img src="jagung.jpg">
+<h3>Jagung</h3>
+<p>Rp 10000 / kg</p>
+<button onclick="addToCart('Jagung',10000)">Tambah</button>
+</div>
+
+<div class="card">
+<img src="singkong.jpg">
+<h3>Singkong</h3>
+<p>Rp 7000 / kg</p>
+<button onclick="addToCart('Singkong',7000)">Tambah</button>
+</div>
+
+</div>
+</section>
+
+<!-- SAYURAN -->
+<section id="sayuran">
+<h2>🥬 Sayuran</h2>
+<div class="products">
+
+<div class="card"><img src="bayam.png"><h3>Bayam</h3><p>Rp 5000</p><button onclick="addToCart('Bayam',5000)">Tambah</button></div>
+
+<div class="card"><img src="wortel.png"><h3>Wortel</h3><p>Rp 8000</p><button onclick="addToCart('Wortel',8000)">Tambah</button></div>
+
+<div class="card"><img src="kangkung.png"><h3>Kangkung</h3><p>Rp 5000</p><button onclick="addToCart('Kangkung',5000)">Tambah</button></div>
+
+<div class="card"><img src="terong.png"><h3>Terong</h3><p>Rp 9000</p><button onclick="addToCart('Kubis',9000)">Tambah</button></div>
+
+<div class="card"><img src="kubis.png"><h3>Kubis</h3><p>Rp 9000</p><button onclick="addToCart('Kubis',9000)">Tambah</button></div>
+
+<div class="card"><img src="kacang-panjang.png"><h3>Kacang panjang</h3><p>Rp 9000</p><button onclick="addToCart('Kubis',9000)">Tambah</button></div>
+
+<div class="card"><img src="brokoli.jpg"><h3>Brokoli</h3><p>Rp 12000</p><button onclick="addToCart('Brokoli',12000)">Tambah</button></div>
+
+<div class="card"><img src="kembang-kol.png"><h3>Kembang Kol</h3><p>Rp 11000</p><button onclick="addToCart('Kembang Kol',11000)">Tambah</button></div>
+
+<div class="card"><img src="pare.png"><h3>Pare</h3><p>Rp 7000</p><button onclick="addToCart('Pare',7000)">Tambah</button></div>
+
+<div class="card"><img src="labu-siam.png"><h3>Labu Siam</h3><p>Rp 6000</p><button onclick="addToCart('Labu Siam',6000)">Tambah</button></div>
+
+<div class="card"><img src="tomat.png"><h3>Tomat</h3><p>Rp 8000</p><button onclick="addToCart('Tomat',8000)">Tambah</button></div>
+
+<div class="card"><img src="timun.png"><h3>Timun</h3><p>Rp 7000</p><button onclick="addToCart('Timun',7000)">Tambah</button></div>
+
+</div>
+</section>
+
+
+<!-- BUAH -->
+<section id="buah">
+<h2>🍎 Buah-buahan</h2>
+<div class="products">
+
+<div class="card"><img src="mangga.png"><h3>Mangga</h3><p>Rp 20000</p><button onclick="addToCart('Mangga',20000)">Tambah</button></div>
+
+<div class="card"><img src="salak.png"><h3>Salak</h3><p>Rp 18000</p><button onclick="addToCart('Salak',18000)">Tambah</button></div>
+
+<div class="card"><img src="rambutan.png"><h3>Rambutan</h3><p>Rp 15000</p><button onclick="addToCart('Rambutan',15000)">Tambah</button></div>
+
+<div class="card"><img src="kelapa.png"><h3>Kelapa</h3><p>Rp 12000</p><button onclick="addToCart('Kelapa',12000)">Tambah</button></div>
+
+<div class="card"><img src="pepaya.png"><h3>Pepaya</h3><p>Rp 14000</p><button onclick="addToCart('Pepaya',14000)">Tambah</button></div>
+
+<div class="card"><img src="jambu.png"><h3>Jambu</h3><p>Rp 16000</p><button onclick="addToCart('Jambu',16000)">Tambah</button></div>
+
+</div>
+</section>
+
+</div>
+</section>
+
+<!-- REMPAH -->
+<section id="rempah">
+<h2>🌿 Rempah</h2>
+<div class="products">
+
+<div class="card"><img src="bawang-merah.png"><h3>Bawang Merah</h3><p>Rp 30000</p><button onclick="addToCart('Bawang Merah',30000)">Tambah</button></div>
+
+<div class="card"><img src="bawang-putih.png"><h3>Bawang Putih</h3><p>Rp 28000</p><button onclick="addToCart('Bawang Putih',28000)">Tambah</button></div>
+
+<div class="card"><img src="cabai.png"><h3>Cabai</h3><p>Rp 35000</p><button onclick="addToCart('Cabai',35000)">Tambah</button></div>
+
+<div class="card"><img src="jahe.png"><h3>Jahe</h3><p>Rp 25000</p><button onclick="addToCart('Jahe',25000)">Tambah</button></div>
+
+<div class="card"><img src="lengkuas.png"><h3>Lengkuas</h3><p>Rp 20000</p><button onclick="addToCart('Lengkuas',20000)">Tambah</button></div>
+
+<div class="card"><img src="serai.png"><h3>Serai</h3><p>Rp 10000</p><button onclick="addToCart('Serai',10000)">Tambah</button></div>
+
+<div class="card"><img src="daun-pandan.png"><h3>Daun Pandan</h3><p>Rp 8000</p><button onclick="addToCart('Daun Pandan',8000)">Tambah</button></div>
+
+<div class="card"><img src="daun-salam.png"><h3>Daun Salam</h3><p>Rp 7000</p><button onclick="addToCart('Daun Salam',7000)">Tambah</button></div>
+
+</div>
+</section>
+
+<section id="keranjang">
+<div class="cart">
+<h2>Keranjang Belanja</h2>
+<ul id="cart-list"></ul>
+<h3>Total: Rp <span id="total">0</span></h3>
+
+<input type="text" id="nama" placeholder="Nama Anda">
+<input type="text" id="alamat" placeholder="Alamat Pengiriman">
+
+<button onclick="checkout()">Pesan via WhatsApp</button>
+</div>
+</section>
+
+<footer>
+© 2026 AgriDesa - Startup Agritech Desa
+</footer>
+
+<a class="whatsapp" href="https://wa.me/6285225528456" target="_blank">💬</a>
+
+<script>
+let cart=[];
+let total=0;
+
+function addToCart(nama,harga){
+cart.push({nama,harga});
+total+=harga;
+renderCart();
+}
+
+function renderCart(){
+let list=document.getElementById("cart-list");
+list.innerHTML="";
+cart.forEach((item,index)=>{
+list.innerHTML+=`<li>${item.nama} - Rp ${item.harga}
+<button onclick="removeItem(${index})">X</button></li>`;
+});
+document.getElementById("total").innerText=total;
+}
+
+function removeItem(index){
+total-=cart[index].harga;
+cart.splice(index,1);
+renderCart();
+}
+
+function checkout(){
+let nama=document.getElementById("nama").value;
+let alamat=document.getElementById("alamat").value;
+
+let pesan="Halo, saya ingin memesan:%0A";
+cart.forEach(item=>{
+pesan+="- "+item.nama+" Rp "+item.harga+"%0A";
+});
+pesan+="%0ATotal: Rp "+total;
+pesan+="%0ANama: "+nama;
+pesan+="%0AAlamat: "+alamat;
+
+window.open("https://wa.me/6285225528456?text="+pesan);
+}
+</script>
+
+</body>
+</html>
